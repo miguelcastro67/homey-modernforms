@@ -28,6 +28,8 @@
     "name": "Miguel Castro",
     "email": "miguelcastro67@gmail.com"
   },
+  "source": "https://github.com/miguelcastro67/homey-modernforms",
+  "support": "https://github.com/miguelcastro67/homey-modernforms/issues",
   "flow": {
     "triggers": [
       {
