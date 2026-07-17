@@ -46,5 +46,8 @@
   },
   "1.0.17": {
     "en": "Change the brandcolor to black to match the logo on the browser tab of the Modern Forms web site."
+  },
+  "1.0.18": {
+    "en": "Added the source and support URLs"
   }
 }

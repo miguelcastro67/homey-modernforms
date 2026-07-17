@@ -52,4 +52,5 @@ If you encounter a problem or have a feature request, please open an Issue on Gi
 
 ## License
 
-MIT License
+GNU GPL v3
+
