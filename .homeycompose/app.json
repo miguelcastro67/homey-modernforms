@@ -1,0 +1,30 @@
+{
+  "id": "com.miguelcastro67.modernforms",
+  "version": "1.0.17",
+  "compatibility": ">=12.4.0",
+  "brandColor": "#000000",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Modern Forms"
+  },
+  "description": {
+    "en": "Local control and advanced Homey automation for Modern Forms smart ceiling fans."
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Miguel Castro",
+    "email": "miguelcastro67@gmail.com"
+  }
+}

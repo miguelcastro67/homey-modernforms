@@ -1,0 +1,1042 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.miguelcastro67.modernforms",
+  "version": "1.0.17",
+  "compatibility": ">=12.4.0",
+  "brandColor": "#000000",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Modern Forms"
+  },
+  "description": {
+    "en": "Local control and advanced Homey automation for Modern Forms smart ceiling fans."
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Miguel Castro",
+    "email": "miguelcastro67@gmail.com"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Breeze mode changed"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Breeze mode"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "breeze_mode_changed"
+      },
+      {
+        "title": {
+          "en": "Fan direction changed"
+        },
+        "tokens": [
+          {
+            "name": "direction",
+            "type": "string",
+            "title": {
+              "en": "Fan direction"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "fan_direction_changed"
+      },
+      {
+        "title": {
+          "en": "Fan speed changed"
+        },
+        "tokens": [
+          {
+            "name": "speed",
+            "type": "number",
+            "title": {
+              "en": "Fan speed"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "fan_speed_changed"
+      },
+      {
+        "title": {
+          "en": "Fan has been off for"
+        },
+        "titleFormatted": {
+          "en": "Fan has been off for [[duration]] [[unit]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration"
+            },
+            "min": 1,
+            "max": 999
+          },
+          {
+            "type": "dropdown",
+            "name": "unit",
+            "title": {
+              "en": "Units"
+            },
+            "values": [
+              {
+                "id": "seconds",
+                "label": {
+                  "en": "seconds"
+                }
+              },
+              {
+                "id": "minutes",
+                "label": {
+                  "en": "minutes"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_turned_off_for"
+      },
+      {
+        "title": {
+          "en": "Fan has been on for"
+        },
+        "titleFormatted": {
+          "en": "Fan has been on for [[duration]] [[unit]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration"
+            },
+            "min": 1,
+            "max": 999
+          },
+          {
+            "type": "dropdown",
+            "name": "unit",
+            "title": {
+              "en": "Units"
+            },
+            "values": [
+              {
+                "id": "seconds",
+                "label": {
+                  "en": "seconds"
+                }
+              },
+              {
+                "id": "minutes",
+                "label": {
+                  "en": "minutes"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_turned_on_for"
+      },
+      {
+        "title": {
+          "en": "Light brightness changed"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Light brightness"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "light_brightness_changed"
+      },
+      {
+        "title": {
+          "en": "Light turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "light_turned_off"
+      },
+      {
+        "title": {
+          "en": "Light turned off for"
+        },
+        "titleFormatted": {
+          "en": "Light turned off for [[duration]] [[unit]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration"
+            },
+            "min": 1,
+            "max": 999
+          },
+          {
+            "type": "dropdown",
+            "name": "unit",
+            "title": {
+              "en": "Units"
+            },
+            "values": [
+              {
+                "id": "seconds",
+                "label": {
+                  "en": "seconds"
+                }
+              },
+              {
+                "id": "minutes",
+                "label": {
+                  "en": "minutes"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "light_turned_off_for"
+      },
+      {
+        "title": {
+          "en": "Light turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "light_turned_on"
+      },
+      {
+        "title": {
+          "en": "Light turned on for"
+        },
+        "titleFormatted": {
+          "en": "Light turned on for [[duration]] [[unit]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration"
+            },
+            "min": 1,
+            "max": 999
+          },
+          {
+            "type": "dropdown",
+            "name": "unit",
+            "title": {
+              "en": "Units"
+            },
+            "values": [
+              {
+                "id": "seconds",
+                "label": {
+                  "en": "seconds"
+                }
+              },
+              {
+                "id": "minutes",
+                "label": {
+                  "en": "minutes"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "light_turned_on_for"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Breeze mode is"
+        },
+        "titleFormatted": {
+          "en": "Breeze mode is [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "enabled",
+                "label": {
+                  "en": "Enabled"
+                }
+              },
+              {
+                "id": "disabled",
+                "label": {
+                  "en": "Disabled"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "breeze_mode_is"
+      },
+      {
+        "title": {
+          "en": "Fan direction is"
+        },
+        "titleFormatted": {
+          "en": "Fan direction is [[direction]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "forward",
+                "label": {
+                  "en": "Forward"
+                }
+              },
+              {
+                "id": "reverse",
+                "label": {
+                  "en": "Reverse"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_direction_is"
+      },
+      {
+        "title": {
+          "en": "Fan speed is greater than"
+        },
+        "titleFormatted": {
+          "en": "Fan speed is greater than [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Speed 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Speed 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Speed 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Speed 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Speed 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Speed 6"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_speed_greater_than"
+      },
+      {
+        "title": {
+          "en": "Fan speed is"
+        },
+        "titleFormatted": {
+          "en": "Fan speed is [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Speed 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Speed 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Speed 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Speed 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Speed 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Speed 6"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_speed_is"
+      },
+      {
+        "title": {
+          "en": "Fan speed is less than"
+        },
+        "titleFormatted": {
+          "en": "Fan speed is less than [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Speed 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Speed 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Speed 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Speed 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Speed 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Speed 6"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_speed_less_than"
+      },
+      {
+        "title": {
+          "en": "Light is turned on"
+        },
+        "titleFormatted": {
+          "en": "Light is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "light_is_on"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Decrease fan speed"
+        },
+        "titleFormatted": {
+          "en": "Decrease fan speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "decrease_fan_speed"
+      },
+      {
+        "title": {
+          "en": "Increase fan speed"
+        },
+        "titleFormatted": {
+          "en": "Increase fan speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ],
+        "id": "increase_fan_speed"
+      },
+      {
+        "title": {
+          "en": "Set breeze mode"
+        },
+        "titleFormatted": {
+          "en": "Set breeze mode to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "enabled",
+                "label": {
+                  "en": "Enabled"
+                }
+              },
+              {
+                "id": "disabled",
+                "label": {
+                  "en": "Disabled"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_breeze_mode"
+      },
+      {
+        "title": {
+          "en": "Set dim level"
+        },
+        "titleFormatted": {
+          "en": "Set dim level to [[level]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "range",
+            "name": "level",
+            "title": {
+              "en": "Dim level"
+            },
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "set_dim_level"
+      },
+      {
+        "title": {
+          "en": "Set fan direction"
+        },
+        "titleFormatted": {
+          "en": "Set fan direction to [[direction]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "forward",
+                "label": {
+                  "en": "Forward"
+                }
+              },
+              {
+                "id": "reverse",
+                "label": {
+                  "en": "Reverse"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_fan_direction"
+      },
+      {
+        "title": {
+          "en": "Set fan speed"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Speed 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Speed 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Speed 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Speed 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Speed 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Speed 6"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_fan_speed"
+      },
+      {
+        "title": {
+          "en": "Set relative dim level"
+        },
+        "titleFormatted": {
+          "en": "Adjust dim level by [[amount]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "range",
+            "name": "amount",
+            "title": {
+              "en": "(-100% to +100%)"
+            },
+            "min": -1,
+            "max": 1,
+            "step": 0.05,
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "set_relative_dim_level"
+      },
+      {
+        "id": "turn_light_off",
+        "title": {
+          "en": "Turn light off"
+        },
+        "titleFormatted": {
+          "en": "Turn light off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ]
+      },
+      {
+        "id": "turn_light_on",
+        "title": {
+          "en": "Turn light on"
+        },
+        "titleFormatted": {
+          "en": "Turn light on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Smart Fan"
+      },
+      "class": "fan",
+      "icon": "/drivers/fan/assets/icon.svg",
+      "capabilities": [
+        "onoff",
+        "discrete_fan_speed",
+        "fan_direction",
+        "breeze_mode",
+        "onoff.light",
+        "dim.light"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Fan power"
+          }
+        },
+        "onoff.light": {
+          "title": {
+            "en": "Light power"
+          },
+          "preventInsights": true
+        },
+        "dim.light": {
+          "title": {
+            "en": "Light brightness"
+          },
+          "preventInsights": true
+        },
+        "discrete_fan_speed": {
+          "title": {
+            "en": "Fan speed"
+          }
+        },
+        "fan_direction": {
+          "title": {
+            "en": "Fan direction"
+          },
+          "preventInsights": true
+        },
+        "breeze_mode": {
+          "title": {
+            "en": "Breeze mode"
+          },
+          "preventInsights": true
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "small": "/drivers/fan/assets/images/small.png",
+        "large": "/drivers/fan/assets/images/large.png",
+        "xlarge": "/drivers/fan/assets/images/xlarge.png"
+      },
+      "id": "fan"
+    }
+  ],
+  "capabilities": {
+    "breeze_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Breeze mode"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "disabled",
+          "title": {
+            "en": "Disabled"
+          }
+        },
+        {
+          "id": "enabled",
+          "title": {
+            "en": "Enabled"
+          }
+        }
+      ]
+    },
+    "discrete_fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan speed"
+      },
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "5"
+          }
+        },
+        {
+          "id": "6",
+          "title": {
+            "en": "6"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
+    "fan_direction": {
+      "type": "enum",
+      "title": {
+        "en": "Fan direction"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "forward",
+          "title": {
+            "en": "Forward"
+          }
+        },
+        {
+          "id": "reverse",
+          "title": {
+            "en": "Reverse"
+          }
+        }
+      ]
+    }
+  }
+}
