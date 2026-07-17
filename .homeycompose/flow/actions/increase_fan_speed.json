@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Increase fan speed"
+  },
+  "titleFormatted": {
+    "en": "Increase fan speed"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    }
+  ]
+}

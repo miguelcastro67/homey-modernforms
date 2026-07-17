@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Light brightness changed"
+  },
+  "tokens": [
+    {
+      "name": "brightness",
+      "type": "number",
+      "title": {
+        "en": "Light brightness"
+      }
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    }
+  ]
+}

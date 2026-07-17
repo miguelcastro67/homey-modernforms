@@ -1,0 +1,36 @@
+{
+  "title": {
+    "en": "Fan direction is"
+  },
+  "titleFormatted": {
+    "en": "Fan direction is [[direction]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    },
+    {
+      "type": "dropdown",
+      "name": "direction",
+      "title": {
+        "en": "Direction"
+      },
+      "values": [
+        {
+          "id": "forward",
+          "label": {
+            "en": "Forward"
+          }
+        },
+        {
+          "id": "reverse",
+          "label": {
+            "en": "Reverse"
+          }
+        }
+      ]
+    }
+  ]
+}

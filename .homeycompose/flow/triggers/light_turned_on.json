@@ -1,0 +1,12 @@
+{
+  "title": {
+    "en": "Light turned on"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    }
+  ]
+}

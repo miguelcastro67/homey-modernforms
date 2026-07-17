@@ -1,0 +1,23 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Breeze mode"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "disabled",
+      "title": {
+        "en": "Disabled"
+      }
+    },
+    {
+      "id": "enabled",
+      "title": {
+        "en": "Enabled"
+      }
+    }
+  ]
+}

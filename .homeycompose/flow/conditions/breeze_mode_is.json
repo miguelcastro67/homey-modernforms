@@ -1,0 +1,36 @@
+{
+  "title": {
+    "en": "Breeze mode is"
+  },
+  "titleFormatted": {
+    "en": "Breeze mode is [[mode]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode"
+      },
+      "values": [
+        {
+          "id": "enabled",
+          "label": {
+            "en": "Enabled"
+          }
+        },
+        {
+          "id": "disabled",
+          "label": {
+            "en": "Disabled"
+          }
+        }
+      ]
+    }
+  ]
+}

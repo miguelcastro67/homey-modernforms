@@ -1,0 +1,30 @@
+{
+  "title": {
+    "en": "Fan speed is greater than"
+  },
+  "titleFormatted": {
+    "en": "Fan speed is greater than [[speed]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    },
+    {
+      "type": "dropdown",
+      "name": "speed",
+      "title": {
+        "en": "Speed"
+      },
+      "values": [
+        { "id": "1", "label": { "en": "Speed 1" } },
+        { "id": "2", "label": { "en": "Speed 2" } },
+        { "id": "3", "label": { "en": "Speed 3" } },
+        { "id": "4", "label": { "en": "Speed 4" } },
+        { "id": "5", "label": { "en": "Speed 5" } },
+        { "id": "6", "label": { "en": "Speed 6" } }
+      ]
+    }
+  ]
+}

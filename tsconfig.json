@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "types": ["node"],
+    "outDir": ".homeybuild",
+    "target": "ES2022",
+    "module": "Node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true
+  }
+}

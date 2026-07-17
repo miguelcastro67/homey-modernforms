@@ -1,0 +1,16 @@
+{
+  "id": "turn_light_off",
+  "title": {
+    "en": "Turn light off"
+  },
+  "titleFormatted": {
+    "en": "Turn light off"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    }
+  ]
+}

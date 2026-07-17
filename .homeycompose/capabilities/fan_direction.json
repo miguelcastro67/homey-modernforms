@@ -1,0 +1,23 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Fan direction"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "forward",
+      "title": {
+        "en": "Forward"
+      }
+    },
+    {
+      "id": "reverse",
+      "title": {
+        "en": "Reverse"
+      }
+    }
+  ]
+}

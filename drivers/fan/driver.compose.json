@@ -1,0 +1,67 @@
+{
+  "name": {
+    "en": "Smart Fan"
+  },
+  "class": "fan",
+  "icon": "{{driverAssetsPath}}/icon.svg",
+  "capabilities": ["onoff", "discrete_fan_speed", "fan_direction", "breeze_mode", "onoff.light", "dim.light"],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Fan power"
+      }
+    },
+    "onoff.light": {
+      "title": {
+        "en": "Light power"
+      },
+       "preventInsights": true
+    },
+    "dim.light": {
+      "title": {
+        "en": "Light brightness"
+      },
+       "preventInsights": true
+    },
+    "discrete_fan_speed": {
+      "title": {
+        "en": "Fan speed"
+      }
+    },
+    "fan_direction": {
+      "title": {
+        "en": "Fan direction"
+      },
+       "preventInsights": true
+    },
+    "breeze_mode": {
+      "title": {
+        "en": "Breeze mode"
+      },
+       "preventInsights": true
+    }
+  },
+  "platforms": ["local"],
+  "connectivity": ["lan"],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": false
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  }
+}

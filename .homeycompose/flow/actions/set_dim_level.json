@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Set dim level"
+  },
+  "titleFormatted": {
+    "en": "Set dim level to [[level]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    },
+    {
+      "type": "range",
+      "name": "level",
+      "title": {
+        "en": "Dim level"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "label": "%",
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ]
+}
