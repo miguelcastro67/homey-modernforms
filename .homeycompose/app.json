@@ -6,7 +6,8 @@
   "sdk": 3,
   "runtime": "nodejs",
   "platforms": [
-    "local"
+    "local",
+    "cloud"
   ],
   "name": {
     "en": "Modern Forms"
