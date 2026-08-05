@@ -1,8 +1,8 @@
 Modern Forms for Homey
 
-Bring your Modern Forms smart ceiling fans into Homey with fast, reliable local control.
+Bring your Modern Forms smart ceiling fans into Homey with fast, reliable local control. Adjust fan power and speed, lighting, brightness, fan direction, and Breeze Mode directly from Homey.
 
-This Homey SDK v3 app automatically discovers compatible Modern Forms fans on your local network and provides complete integration with Homey, including fan speed, lighting, fan direction, Breeze Mode, and Advanced Flow support.
+Create powerful automations using Homey's Advanced Flow while the app stays synchronized with changes made from either Homey or the Modern Forms app. Communication takes place directly over your local network, with no cloud account, subscription, or additional bridge required.
 
 Features
 
