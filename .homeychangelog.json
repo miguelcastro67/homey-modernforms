@@ -49,5 +49,8 @@
   },
   "1.0.18": {
     "en": "Added the source and support URLs"
+  },
+  "1.0.19": {
+    "en": "Modified the app json to include cloud entry"
   }
 }
