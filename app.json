@@ -7,14 +7,13 @@
   "sdk": 3,
   "runtime": "nodejs",
   "platforms": [
-    "local",
-    "cloud"
+    "local"
   ],
   "name": {
     "en": "Modern Forms"
   },
   "description": {
-    "en": "Local control and advanced Homey automation for Modern Forms smart ceiling fans."
+    "en": "Smarter control for your Modern Forms ceiling fans."
   },
   "category": [
     "appliances"
