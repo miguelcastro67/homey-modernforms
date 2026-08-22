@@ -299,7 +299,10 @@ export default class FlowManager {
           throw new Error('Fan speed must be a valid number.');
         }
 
-        const fanSpeed = Math.max(1, Math.min(6, Math.round(requestedSpeed)));
+        if (!Number.isInteger(requestedSpeed) || requestedSpeed < 1 || requestedSpeed > 6) {
+          throw new Error('Fan speed must be a whole number from 1 to 6.');
+        }
+        const fanSpeed = requestedSpeed;
 
         this.logger.info(
           `Flow: Setting ${device.getName()} to speed ${fanSpeed}`
