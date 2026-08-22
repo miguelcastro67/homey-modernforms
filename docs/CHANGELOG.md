@@ -22,3 +22,10 @@ Changes made before the initial public release are tracked in `ENGINEERING_JOURN
 - Set Fan Speed accepts only whole numbers from 1–6; invalid or out-of-range values are rejected.
 - Added the read-only numeric Fan speed value capability/tag.
 - Existing paired fans automatically receive the new capability.
+
+## [1.1.3] - 2026-08-22
+
+### Changed
+
+- Updated the Set Fan Speed card label to clearly indicate the valid 1–6 range.
+- Updated Flow card documentation for numeric tag/variable support and the Fan speed value tag.
