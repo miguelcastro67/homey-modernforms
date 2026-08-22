@@ -61,5 +61,8 @@
   },
   "1.1.1": {
     "en": "Modification to the fan speed to change it from a dropdown to a number field so it supports a tag variable."
+  },
+  "1.1.2": {
+    "en": "Fixed fan speed mod to expose a fan speed tag as part of the fan's exposed values."
   }
 }
