@@ -1,4 +1,5 @@
 # Modern Forms Homey App
+
 # Flow Cards
 
 This document describes the Flow cards currently implemented in the app.
@@ -39,7 +40,7 @@ Duration triggers support seconds and minutes.
 
 - Turn fan on
 - Turn fan off
-- Set fan speed
+- Set fan speed (1–6; supports numeric Flow tags/variables)
 - Increase fan speed
 - Decrease fan speed
 - Set fan direction
@@ -49,11 +50,18 @@ Duration triggers support seconds and minutes.
 - Set dim level
 - Adjust dim level by a relative percentage
 
+# Device Flow Tags
+
+- Fan speed value — read-only numeric tag containing the fan's current speed (1–6)
+- Light brightness — current light brightness value
+- 
 # Implementation Notes
 
 Flow registration is centralized in `src/flow/FlowManager.ts`.
 
 `FlowManager` owns card lookup, listener registration, trigger references, trigger execution, and duration-trigger argument lookup.
+
+Set Fan Speed accepts either a manually entered number or a numeric Flow tag. The value must resolve to a whole number from 1 through 6; invalid, fractional, or out-of-range values are rejected.
 
 The device class owns state-transition detection, timer scheduling and cleanup, capability listeners, and calls into `FlowManager`.
 

@@ -4,16 +4,21 @@ All notable changes to released versions of the Modern Forms Homey app are docum
 
 Changes made before the initial public release are tracked in `ENGINEERING_JOURNAL.md`.
 
-## [1.0.x] - YYYY-MM-DD
+## [1.1.0] - 2026-08-06
 
-### Added
+### Initial public release
 
-- Addition described here.
+## [1.1.1] - 2026-08-22
 
 ### Changed
 
-- Change described here.
+- Modification to the fan speed to change it from a dropdown to a number field so it supports a tag variable.
 
-### Fixed
+## [1.1.2] - 2026-08-22
 
-- Issue and fix described here.
+### Changed
+
+- Set Fan Speed now accepts numeric Flow tags/variables.
+- Set Fan Speed accepts only whole numbers from 1–6; invalid or out-of-range values are rejected.
+- Added the read-only numeric Fan speed value capability/tag.
+- Existing paired fans automatically receive the new capability.
