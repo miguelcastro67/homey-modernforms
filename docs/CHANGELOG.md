@@ -29,3 +29,12 @@ Changes made before the initial public release are tracked in `ENGINEERING_JOURN
 
 - Updated the Set Fan Speed card label to clearly indicate the valid 1–6 range.
 - Updated Flow card documentation for numeric tag/variable support and the Fan speed value tag.
+
+## [1.1.4] - 2026-08-22
+
+### Changed
+
+- Fan speed values are now limited to 1–6, requiring the fan to be explicitly turned off using the Turn Off card.
+- Dim Level now has a minimum value of 1%, preventing dimming commands from implicitly turning the light off.
+- Brightness adjustments are now clamped to a minimum of 1%.
+

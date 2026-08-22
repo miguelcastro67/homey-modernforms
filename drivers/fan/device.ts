@@ -241,7 +241,7 @@ class ModernFormsFanDevice extends Homey.Device {
 
   public async adjustLightBrightness(amount: number): Promise<void> {
     const state = await this.app.fanClient.getState(this.connection);
-    const brightness = Math.max(0, Math.min(100, state.lightBrightness + amount));
+    const brightness = Math.max(1, Math.min(100, state.lightBrightness + amount));
 
     if (brightness === state.lightBrightness) {
       return;
