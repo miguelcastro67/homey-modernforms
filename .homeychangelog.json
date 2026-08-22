@@ -67,5 +67,8 @@
   },
   "1.1.3": {
     "en": "Fan speed accepts numeric flow tags/variables, validates to only accept whole numbers 1-6. Note: existing paired fans automaticality receive the new capability."
+  },
+  "1.1.4": {
+    "en": "Not allowing fan speed of less than 1. Must use Turn Off card explicitly so fan speed can be retained for when fan is turned on again. - Dim level now has minimum of 1% instead of 0% for same reason."
   }
 }
