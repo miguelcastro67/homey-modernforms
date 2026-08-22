@@ -840,6 +840,7 @@
       "capabilities": [
         "onoff",
         "discrete_fan_speed",
+        "fan_speed_value",
         "fan_direction",
         "breeze_mode",
         "onoff.light",
@@ -866,6 +867,11 @@
         "discrete_fan_speed": {
           "title": {
             "en": "Fan speed"
+          }
+        },
+        "fan_speed_value": {
+          "title": {
+            "en": "Fan speed value"
           }
         },
         "fan_direction": {
@@ -1004,6 +1010,17 @@
           }
         }
       ]
+    },
+    "fan_speed_value": {
+      "type": "number",
+      "title": {
+        "en": "Fan speed"
+      },
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "getable": true,
+      "setable": false
     }
   }
 }

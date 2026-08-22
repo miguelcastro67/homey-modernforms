@@ -4,7 +4,15 @@
   },
   "class": "fan",
   "icon": "{{driverAssetsPath}}/icon.svg",
-  "capabilities": ["onoff", "discrete_fan_speed", "fan_direction", "breeze_mode", "onoff.light", "dim.light"],
+  "capabilities": [
+    "onoff",
+    "discrete_fan_speed",
+    "fan_speed_value",
+    "fan_direction",
+    "breeze_mode",
+    "onoff.light",
+    "dim.light"
+  ],
   "capabilitiesOptions": {
     "onoff": {
       "title": {
@@ -26,6 +34,11 @@
     "discrete_fan_speed": {
       "title": {
         "en": "Fan speed"
+      }
+    },
+    "fan_speed_value": {
+      "title": {
+        "en": "Fan speed value"
       }
     },
     "fan_direction": {

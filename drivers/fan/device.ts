@@ -48,6 +48,10 @@ class ModernFormsFanDevice extends Homey.Device {
       await this.addCapability('discrete_fan_speed');
     }
 
+    if (!this.hasCapability('fan_speed_value')) {
+      await this.addCapability('fan_speed_value');
+    }
+
     if (!this.hasCapability('fan_direction')) {
       await this.addCapability('fan_direction');
     }
@@ -411,6 +415,7 @@ class ModernFormsFanDevice extends Homey.Device {
 
     await this.setCapabilityIfPresent('onoff', state.fanOn);
     await this.setCapabilityIfPresent('discrete_fan_speed', String(state.fanSpeed));
+    await this.setCapabilityIfPresent('fan_speed_value', state.fanSpeed);
     await this.setCapabilityIfPresent('fan_direction', state.fanDirection);
     await this.setCapabilityIfPresent('breeze_mode', state.wind ? 'enabled' : 'disabled');
     await this.setCapabilityIfPresent('onoff.light', state.lightOn);

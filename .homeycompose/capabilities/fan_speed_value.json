@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fan speed"
+  },
+  "min": 1,
+  "max": 6,
+  "step": 1,
+  "getable": true,
+  "setable": false
+}
+
