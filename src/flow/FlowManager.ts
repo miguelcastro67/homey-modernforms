@@ -1,4 +1,4 @@
-import Homey,{ FlowCardAction, FlowCardCondition, FlowCardTriggerDevice } from 'homey';
+import Homey, { FlowCardAction, FlowCardCondition, FlowCardTriggerDevice } from 'homey';
 import type { ModernFormsAppType } from '../../app';
 import type Logger from '../core/Logger';
 import FanDirection from '../models/FanDirection';
@@ -292,7 +292,14 @@ export default class FlowManager {
 
     this.setFanSpeedCard.registerRunListener(
       async ({ device, speed }) => {
-        const fanSpeed = Number(speed);
+
+        const requestedSpeed = Number(speed);
+
+        if (!Number.isFinite(requestedSpeed)) {
+          throw new Error('Fan speed must be a valid number.');
+        }
+
+        const fanSpeed = Math.max(1, Math.min(6, Math.round(requestedSpeed)));
 
         this.logger.info(
           `Flow: Setting ${device.getName()} to speed ${fanSpeed}`
