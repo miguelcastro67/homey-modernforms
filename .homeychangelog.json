@@ -58,5 +58,8 @@
   },
   "1.1.0": {
     "en": "Cleared up minor readme file mistake - app approved and live!"
+  },
+  "1.1.1": {
+    "en": "Modification to the fan speed to change it from a dropdown to a number field so it supports a tag variable."
   }
 }
