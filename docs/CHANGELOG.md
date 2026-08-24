@@ -38,7 +38,7 @@ Changes made before the initial public release are tracked in `ENGINEERING_JOURN
 - Dim Level now has a minimum value of 1%, preventing dimming commands from implicitly turning the light off.
 - Brightness adjustments are now clamped to a minimum of 1%.
 
-## [Unreleased] - 2026-08-24
+## [1.1.5] - 2026-08-24
 
 ### Added
 
