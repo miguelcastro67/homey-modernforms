@@ -70,5 +70,8 @@
   },
   "1.1.4": {
     "en": "Not allowing fan speed of less than 1. Must use Turn Off card explicitly so fan speed can be retained for when fan is turned on again. - Dim level now has minimum of 1% instead of 0% for same reason."
+  },
+  "1.1.5": {
+    "en": "Fixed the 'Is Light Turned On' card invert functionality, added 'Increase & Decrease dim level' cards as well as 'Toggle light' card."
   }
 }
