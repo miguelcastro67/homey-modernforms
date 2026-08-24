@@ -591,10 +591,10 @@
       },
       {
         "title": {
-          "en": "Light is turned on"
+          "en": "!{{Light is turned on|Light is turned off}}"
         },
         "titleFormatted": {
-          "en": "Light is turned on"
+          "en": "!{{Light is turned on|Light is turned off}}"
         },
         "args": [
           {
@@ -607,6 +607,36 @@
       }
     ],
     "actions": [
+      {
+        "id": "decrease_dim_level",
+        "title": {
+          "en": "Decrease dim level"
+        },
+        "titleFormatted": {
+          "en": "Decrease dim level by [[amount]]% (optional; default 5%)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "amount",
+            "title": {
+              "en": "Amount"
+            },
+            "placeholder": {
+              "en": "5% (default)"
+            },
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "required": false
+          }
+        ]
+      },
       {
         "title": {
           "en": "Decrease fan speed"
@@ -622,6 +652,36 @@
           }
         ],
         "id": "decrease_fan_speed"
+      },
+      {
+        "id": "increase_dim_level",
+        "title": {
+          "en": "Increase dim level"
+        },
+        "titleFormatted": {
+          "en": "Increase dim level by [[amount]]% (optional; default 5%)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          },
+          {
+            "type": "number",
+            "name": "amount",
+            "title": {
+              "en": "Amount"
+            },
+            "placeholder": {
+              "en": "5% (default)"
+            },
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "required": false
+          }
+        ]
       },
       {
         "title": {
@@ -795,6 +855,22 @@
           }
         ],
         "id": "set_relative_dim_level"
+      },
+      {
+        "id": "toggle_light",
+        "title": {
+          "en": "Toggle light"
+        },
+        "titleFormatted": {
+          "en": "Toggle light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan"
+          }
+        ]
       },
       {
         "id": "turn_light_off",

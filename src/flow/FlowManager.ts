@@ -30,10 +30,13 @@ export default class FlowManager {
   private relativeDimLevelCard!: FlowCardAction;
   private setBreezeModeCard!: FlowCardAction;
   private setDimLevelCard!: FlowCardAction;
+  private increaseDimLevelCard!: FlowCardAction;
+  private decreaseDimLevelCard!: FlowCardAction;
   private setFanDirectionCard!: FlowCardAction;
   private setFanSpeedCard!: FlowCardAction;
   private turnLightOnCard!: FlowCardAction;
   private turnLightOffCard!: FlowCardAction;
+  private toggleLightCard!: FlowCardAction;
  
   public async triggerLightTurnedOn(device: Homey.Device): Promise<void> {
     await this.lightTurnedOnTrigger.trigger(device);
@@ -111,8 +114,11 @@ export default class FlowManager {
     this.registerSetBreezeModeAction();
     this.registerTurnLightOnAction();
     this.registerTurnLightOffAction();
+    this.registerToggleLightAction();
     this.registerSetDimLevelAction();
     this.registerSetRelativeDimLevelAction();
+    this.registerIncreaseDimLevelAction();
+    this.registerDecreaseDimLevelAction();
   }
 
   // TRIGGERS
@@ -407,6 +413,23 @@ export default class FlowManager {
     });
   } 
 
+  private registerToggleLightAction(): void {
+    this.toggleLightCard =
+      this.app.homey.flow.getActionCard('toggle_light');
+
+    this.toggleLightCard.registerRunListener(async ({ device }) => {
+      const isOn = device.isLightOn();
+
+      this.logger.info(
+        `Flow: Toggling light for ${device.getName()} to ${isOn ? 'off' : 'on'}`
+      );
+
+      await device.setLightPower(!isOn);
+
+      return true;
+    });
+  }
+
   private registerSetDimLevelAction(): void {
     this.setDimLevelCard =
       this.app.homey.flow.getActionCard('set_dim_level');
@@ -439,6 +462,72 @@ export default class FlowManager {
         );
 
         await device.adjustLightBrightness(delta);
+
+        return true;
+      }
+    );
+  }
+
+  private registerIncreaseDimLevelAction(): void {
+    this.increaseDimLevelCard =
+      this.app.homey.flow.getActionCard('increase_dim_level');
+
+    this.increaseDimLevelCard.registerRunListener(
+      async ({ device, amount }) => {
+        const increment =
+          amount === undefined || amount === null
+            ? 5
+            : Number(amount);
+
+        if (
+          !Number.isFinite(increment) ||
+          !Number.isInteger(increment) ||
+          increment < 1 ||
+          increment > 100
+        ) {
+          throw new Error(
+            'Dim level increment must be a whole number from 1 to 100.'
+          );
+        }
+
+        this.logger.info(
+          `Flow: Increasing ${device.getName()} light brightness by ${increment}%`
+        );
+
+        await device.adjustLightBrightness(increment);
+
+        return true;
+      }
+    );
+  }
+
+  private registerDecreaseDimLevelAction(): void {
+    this.decreaseDimLevelCard =
+      this.app.homey.flow.getActionCard('decrease_dim_level');
+
+    this.decreaseDimLevelCard.registerRunListener(
+      async ({ device, amount }) => {
+        const decrement =
+          amount === undefined || amount === null
+            ? 5
+            : Number(amount);
+
+        if (
+          !Number.isFinite(decrement) ||
+          !Number.isInteger(decrement) ||
+          decrement < 1 ||
+          decrement > 100
+        ) {
+          throw new Error(
+            'Dim level decrement must be a whole number from 1 to 100.'
+          );
+        }
+
+        this.logger.info(
+          `Flow: Decreasing ${device.getName()} light brightness by ${decrement}%`
+        );
+
+        await device.adjustLightBrightness(-decrement);
 
         return true;
       }

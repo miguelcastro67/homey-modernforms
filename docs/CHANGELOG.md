@@ -38,3 +38,20 @@ Changes made before the initial public release are tracked in `ENGINEERING_JOURN
 - Dim Level now has a minimum value of 1%, preventing dimming commands from implicitly turning the light off.
 - Brightness adjustments are now clamped to a minimum of 1%.
 
+## [Unreleased] - 2026-08-24
+
+### Added
+
+- Added a Toggle Light Flow action card.
+- Added Increase Dim Level and Decrease Dim Level Flow action cards.
+- Increase/Decrease Dim Level support an optional whole-number percentage amount; when omitted, the adjustment defaults to 5%.
+- Increase/Decrease Dim Level amount fields support numeric Flow tags/variables.
+
+### Fixed
+
+- Fixed the Light is turned on condition card so Homey's Invert option correctly evaluates the light-off state.
+
+### Changed
+
+- Increase/Decrease Dim Level adjustments remain clamped to the supported 1%–100% brightness range.
+

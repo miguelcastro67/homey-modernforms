@@ -36,6 +36,8 @@ Duration triggers support seconds and minutes.
 - Light is turned on
 - Built-in Homey light-brightness comparison cards
 
+The Light is turned on condition supports Homey's Invert option to evaluate the light-off state.
+
 # Then — Actions
 
 - Turn fan on
@@ -47,21 +49,26 @@ Duration triggers support seconds and minutes.
 - Set Breeze Mode
 - Turn light on
 - Turn light off
+- Toggle light
 - Set dim level
+- Increase dim level (optional amount; defaults to 5%)
+- Decrease dim level (optional amount; defaults to 5%)
 - Adjust dim level by a relative percentage
 
 # Device Flow Tags
 
 - Fan speed value — read-only numeric tag containing the fan's current speed (1–6)
 - Light brightness — current light brightness value
-- 
-# Implementation Notes
+
+# Implementation Notes# Implementation Notes
 
 Flow registration is centralized in `src/flow/FlowManager.ts`.
 
 `FlowManager` owns card lookup, listener registration, trigger references, trigger execution, and duration-trigger argument lookup.
 
 Set Fan Speed accepts either a manually entered number or a numeric Flow tag. The value must resolve to a whole number from 1 through 6; invalid, fractional, or out-of-range values are rejected.
+
+Increase/Decrease Dim Level accept an optional whole-number percentage or numeric Flow tag. If omitted, the adjustment defaults to 5%. Brightness adjustments are clamped to 1%–100%.
 
 The device class owns state-transition detection, timer scheduling and cleanup, capability listeners, and calls into `FlowManager`.
 

@@ -869,3 +869,61 @@ After the app is live:
 
 - released additions, changes, and fixes go into `CHANGELOG.md`;
 - investigations, architecture, and implementation rationale remain in the Engineering Journal.
+
+---
+
+# Session 10
+## Post-release Flow Enhancements — 2026-08-24
+
+### Fan speed tag support carried forward
+
+Post-release fan-speed work changed Set Fan Speed from a fixed dropdown to a numeric field that supports numeric Flow tags/variables. Runtime validation requires a whole-number speed from 1 through 6.
+
+A read-only numeric `fan_speed_value` capability/tag was added so the current fan speed can be consumed by other Flow cards. Existing paired fans are migrated to receive the capability.
+
+Fan speed 0 remains intentionally unsupported. Fan power is modeled independently and must be changed explicitly through the fan power controls.
+
+### Light brightness semantics
+
+Dim Level was changed to use a 1% minimum. Relative brightness adjustments are also clamped to a minimum of 1% and a maximum of 100%.
+
+This preserves a clean separation between light power and brightness: a dimming command does not implicitly become an off command.
+
+### Light condition inversion fix
+
+The custom Light is turned on condition displayed Homey's Invert option but did not previously change the route evaluation when inverted.
+
+The Flow-card metadata was updated to provide Homey's normal/inverted condition wording. No runtime change to `FlowManager` was required; the existing condition listener continues to return the actual light state and Homey performs the inversion.
+
+Testing confirmed correct routing in both normal and inverted states.
+
+### Toggle Light
+
+Added a custom Toggle Light action because Homey exposes a built-in toggle for the primary fan `onoff` capability but does not provide an equivalent generated toggle for the secondary `onoff.light` capability.
+
+The action reads the existing light state through the device helper and calls the existing light-power command with the opposite value.
+
+Testing confirmed both off-to-on and on-to-off transitions.
+
+### Increase / Decrease Dim Level
+
+Added dedicated Increase Dim Level and Decrease Dim Level actions.
+
+Each action accepts an optional whole-number percentage amount from 1 through 100 and supports numeric Flow tags/variables. If the amount is omitted, the runtime defaults to a 5% adjustment.
+
+The card title includes the optional/default behavior. Homey requires `titleFormatted` to reference all declared Flow arguments, so the `[[amount]]` argument remains present in the formatted title even when optional.
+
+Both actions reuse the existing device brightness-adjustment method. Decrease is passed as a negative adjustment; device-level clamping keeps the resulting brightness within 1%–100%.
+
+### Verification
+
+Confirmed:
+
+- publish-level validation passes;
+- Light is turned on routes correctly in normal and inverted modes;
+- Toggle Light works in both directions;
+- Increase/Decrease Dim Level use the 5% default when omitted;
+- manual override values work;
+- numeric Flow tags/variables work;
+- brightness is clamped to 1% at the low end and 100% at the high end.
+

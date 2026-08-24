@@ -1,7 +1,7 @@
 # Modern Forms Homey App
 **Author:** Miguel Castro
 **Assistant:** ChatGPT
-**Status:** Release Candidate — Test channel, version 1.0.16
+**Status:** Public Homey App Store app; current development/review history is tracked in `CHANGELOG.md`.
 
 ---
 
@@ -217,6 +217,7 @@ Capabilities:
 
 - `onoff`
 - `discrete_fan_speed`
+- `fan_speed_value` (read-only numeric Flow tag/capability)
 - `fan_direction`
 - `breeze_mode`
 - `onoff.light`
@@ -242,7 +243,7 @@ Insights is disabled for selected low-value capabilities, including `onoff.light
 - Fan speed is / less than / greater than
 - Fan direction is
 - Breeze Mode is
-- Light is turned on
+- Light is turned on (supports Homey inversion)
 - Built-in brightness comparisons
 
 ## Then
@@ -251,8 +252,10 @@ Insights is disabled for selected low-value capabilities, including `onoff.light
 - Set, increase, or decrease fan speed
 - Set fan direction
 - Set Breeze Mode
-- Turn light on/off
-- Set or adjust dim level
+- Turn light on/off and Toggle light
+- Set dim level
+- Increase/decrease dim level with optional amount (default 5%)
+- Adjust dim level by a relative percentage
 
 Flow registration is centralized in `FlowManager`.
 
@@ -336,7 +339,6 @@ Delete unused classes rather than commenting them out.
 
 ## High Priority
 
-- Submit version 1.0.9 for review.
 - Keep automatic publication disabled until GitHub and public documentation are ready.
 - Resolve or confirm the remaining icon-rendering discrepancy.
 - Complete final release-candidate testing.
@@ -416,9 +418,9 @@ Create the definitive Modern Forms Homey integration that exceeds the functional
 
 # Release Status
 
-Current version: **1.0.9**
+Current version: See `CHANGELOG.md` for the current Live/Test/review version history.
 
-Current channel: **Homey App Store Test**
+Current channel: Homey App Store Live, with Test/review builds used for updates.
 
 Validation: **Passes publish-level validation**
 
@@ -438,3 +440,21 @@ Submit for review with **Automatically publish upon approval** disabled.
 Documentation plan:
 
 Continue recording pre-release work in the Engineering Journal. Begin user-facing release-by-release entries in the Changelog once the app is publicly live.
+
+
+## Current Development Snapshot — 2026-08-24
+
+The app is publicly released. Subsequent changes are developed through Homey's Test channel and submitted for Athom approval when ready for public release.
+
+Recent completed work includes:
+
+- Set Fan Speed accepts manual numeric values and numeric Flow tags/variables.
+- Fan speed runtime validation requires a whole number from 1 through 6.
+- `fan_speed_value` exposes current fan speed as a read-only numeric Flow value and is migrated onto existing paired fans.
+- Fan speed 0 is intentionally not used as an off state; fan power remains explicit.
+- Dim Level uses a 1% minimum and brightness adjustment is clamped to 1%–100%.
+- The Light is turned on condition correctly supports Homey's Invert behavior.
+- Toggle Light is implemented as a custom action for `onoff.light`.
+- Increase Dim Level and Decrease Dim Level support an optional whole-number amount, defaulting to 5%, including numeric Flow tags/variables.
+
+For release-by-release history, use `CHANGELOG.md`. For implementation details and durable design rules, use `ARCHITECTURE.md`.

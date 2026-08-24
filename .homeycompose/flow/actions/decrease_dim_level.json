@@ -1,0 +1,30 @@
+{
+  "id": "decrease_dim_level",
+  "title": {
+    "en": "Decrease dim level"
+  },
+  "titleFormatted": {
+    "en": "Decrease dim level by [[amount]]% (optional; default 5%)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=fan"
+    },
+    {
+      "type": "number",
+      "name": "amount",
+      "title": {
+        "en": "Amount"
+      },
+      "placeholder": {
+        "en": "5% (default)"
+      },
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "required": false
+    }
+  ]
+}

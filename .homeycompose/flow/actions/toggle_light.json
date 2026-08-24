@@ -1,9 +1,10 @@
 {
+  "id": "toggle_light",
   "title": {
-    "en": "!{{Light is turned on|Light is turned off}}"
+    "en": "Toggle light"
   },
   "titleFormatted": {
-    "en": "!{{Light is turned on|Light is turned off}}"
+    "en": "Toggle light"
   },
   "args": [
     {

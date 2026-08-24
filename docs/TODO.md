@@ -7,12 +7,13 @@
 - [ ] Rebuild the Modern Forms logo using the working backup SVG wrapper.
 - [ ] Test the revised icon in all four Homey rendering contexts.
 - [ ] Check Modern Forms API doc and see if "firmware update" is exposed.
-- [ ] Submit version 1.0.9 for Homey App Store review.
 - [ ] Leave **Automatically publish upon approval** disabled.
 - [ ] Ensure synchronization and network calls have appropriate error handling.
 - [ ] Complete one final clean install, pair, delete, and re-pair test.
 
 ## Final Testing
+
+- [ ] Regression-test custom light Flow actions and inverted light condition before each submitted release.
 
 - [ ] Disconnect fan Wi-Fi and verify graceful behavior.
 - [ ] Reconnect Wi-Fi and verify recovery.
@@ -30,11 +31,11 @@
 
 ## Release Documentation
 
-- [ ] Create GitHub repository.
-- [ ] Add MIT license.
-- [ ] Prepare production README.
-- [ ] Add `CONTRIBUTING.md`.
-- [ ] Add `SECURITY.md`.
+- [x] Create GitHub repository.
+- [x] Add MIT license.
+- [x] Prepare production README.
+- [x] Add `CONTRIBUTING.md`.
+- [x] Add `SECURITY.md`.
 - [ ] Add issue templates.
 - [ ] Add initial GitHub release notes.
 - [ ] Document architecture, folder layout, lifecycle, Flow architecture, polling, and synchronization.
@@ -76,3 +77,10 @@
 - [ ] Consider staggering synchronization for multiple devices.
 - [ ] Evaluate additional discovery providers.
 - [ ] Investigate whether custom Condition cards can expose tags.
+
+
+## Release Maintenance
+
+- [ ] Regression-test custom Flow actions and conditions before each submitted release.
+- [ ] Verify existing paired fans survive application upgrades without re-pairing.
+- [ ] Keep `CHANGELOG.md`, `RELEASE_NOTES.md`, `FLOW_CARDS.md`, `PROJECT_NOTES.md`, `ARCHITECTURE.md`, and `ENGINEERING_JOURNAL.md` synchronized with behavior-changing releases.
