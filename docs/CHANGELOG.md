@@ -55,3 +55,8 @@ Changes made before the initial public release are tracked in `ENGINEERING_JOURN
 
 - Increase/Decrease Dim Level adjustments remain clamped to the supported 1%–100% brightness range.
 
+## [1.1.6] - 2026-08-24
+
+### Changed
+
+- Documentation update only; no functional changes from 1.1.5.
